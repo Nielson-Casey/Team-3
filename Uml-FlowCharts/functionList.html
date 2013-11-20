@@ -1,7 +1,7 @@
 
 <script>
 
-PRE_SET_PAGE_1
+PRE_SET_PAGE_1 //I Vote we come back to these ones after we build the custom game tools like the dice, time, scorekeeper, etc. so we can implement those methods in these preset games. - Cam
 Farkle()
 Hearts()
 Canasta()
@@ -10,12 +10,69 @@ Dominos()
 
 CUSTOM_PAGE_2
 CustomLibrary()
-Dice(x)
+function Dice() {
+	var randomDice = Math.round(Math.random()*5)
+	var diceValue = randomDice + 1
+	return diceValue
+}
 Timer(x)
 Rounds(x)
-Money()
-Numbers()
-
+class MoneyHandler() {
+	var money = 0;
+	//newMoney variable needs to come from what a user inputs so it will be declared elsewhere in the html file. - Cam
+	function gainedMoney(newMoney) {
+		money += newMoney;
+	}
+	function lostMoney(newMoney) {
+		money -= newMoney;
+	}
+	function getMoney() {
+		return money;
+	}
+}
+class ScoreKeeper() {
+	var score= 0; 
+	function gainedPoint() { 
+		score++; 
+	} 
+	function lostPoint() {
+		score--;
+	}
+	function getScore() { 
+		return score; 
+	} 
+}
+function Bingo() {
+	var random = Math.floor(Math.random()*4)
+	var letter = if (random == 0) {
+		letter = "B"
+	};
+	else if (random == 2) {
+		letter = "N"
+	};
+	else if (random == 3) {
+		letter = "G"
+	};
+	else if (random == 4) {
+		letter = "O"
+	};
+	if (letter == "B") {
+		number = Math.floor((Math.random()*15)+1);
+	};
+	else if (letter == "I") {
+		number = Math.floor((Math.random()*30)+16);
+	};
+	else if (letter == "N") {
+		number = Math.floor((Math.random()*45)+31);
+	};
+	else if (letter == "G") {
+		number = Math.floor((Math.random()*60)+46);
+	};
+	else if (letter == "O") {
+		number = Math.floor((Math.random()*75)+61);
+	};
+	return letter + "-" + number;
+}
 
 CUSTOM_PAGE_3
 RoundsToWin(x)
