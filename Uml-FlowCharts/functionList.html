@@ -11,20 +11,20 @@ Dominos()
 CUSTOM_PAGE_2
 CustomLibrary()
 function Dice() {
-	var randomDice = Math.round(Math.random()*5)
-	var diceValue = randomDice + 1
-	return diceValue
+	var randomDice = Math.round(Math.random()*5);
+	var diceValue = randomDice + 1;
+	return diceValue;
 }
 Timer(x)
 Rounds(x)
 class MoneyHandler() {
-	var money = 0;
-	//newMoney variable needs to come from what a user inputs so it will be declared elsewhere in the html file. - Cam
+	var money = 0.00;
+	//newMoney variable needs to come from what a user inputs so it will be declared elsewhere in the html. - Cam
 	function gainedMoney(newMoney) {
-		money += newMoney;
+		money += Math.ceil(newMoney * 100)/100;
 	}
 	function lostMoney(newMoney) {
-		money -= newMoney;
+		money -= Math.ceil(newMoney * 100)/100;
 	}
 	function getMoney() {
 		return money;
@@ -37,6 +37,12 @@ class ScoreKeeper() {
 	} 
 	function lostPoint() {
 		score--;
+	}
+	function gainedManyPoints(points) {
+		score += points
+	}
+	function lostManyPoints(points) {
+		score -= points
 	}
 	function getScore() { 
 		return score; 
