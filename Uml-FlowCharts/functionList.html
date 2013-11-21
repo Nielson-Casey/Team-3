@@ -1,11 +1,11 @@
 
-<script>
+<script text/javascript>
 
 PRE_SET_PAGE_1 //I Vote we come back to these ones after we build the custom game tools like the dice, time, scorekeeper, etc. so we can implement those methods in these preset games. - Cam
 Farkle()
 Hearts()
 Canasta()
-War()
+War() //How do we want to do this game?  Do we want to generate cards as well? - Cam
 Dominos()
 
 CUSTOM_PAGE_2
@@ -16,8 +16,8 @@ function Dice() {
 	return diceValue;
 }
 Timer(x)
-Rounds(x)
-class MoneyHandler() {
+Rounds(x) //2 dimensional array storing each player name with scores by round.  Should be a class with methods for adding scores to a round as well.
+function MoneyHandler() {
 	var money = 0.00;
 	//newMoney variable needs to come from what a user inputs so it will be declared elsewhere in the html. - Cam
 	function gainedMoney(newMoney) {
@@ -30,7 +30,7 @@ class MoneyHandler() {
 		return money;
 	}
 }
-class ScoreKeeper() {
+function ScoreKeeper() {
 	var score= 0; 
 	function gainedPoint() { 
 		score++; 
@@ -52,6 +52,9 @@ function Bingo() {
 	var random = Math.floor(Math.random()*4)
 	var letter = if (random == 0) {
 		letter = "B"
+	};
+	else if (random == 1) {
+		letter = "I"
 	};
 	else if (random == 2) {
 		letter = "N"
@@ -81,14 +84,30 @@ function Bingo() {
 }
 
 CUSTOM_PAGE_3
-RoundsToWin(x)
+//since we don't need to manipulate these numbers at all, I don't know if they need to be functions or just assigned variables later so we can call them back
+roundsToWin(x)
+var roundsToWin = document.getElementById(totalRounds);
 ScoreToWin(x)
+var scoreToWin = document.getElementById(winningScore);
 
 INITIALIZE_4
+function startGame(player) {}  //needs a loop to get each player and create a new player - Cam
 Save()
 
+
 Players_5
-Players(x)
+function Player(name) {
+	this.name = name;
+	var image;
+	var score = 0;
+	var wins = 0;
+	var losses = 0;
+	var ties = 0;
+}
+
+function addPlayer() {
+	var player = new Player(name); //how do you change the name of the player variable depending on what number player this is (i.e. player1, player2, etc.)? - Cam
+}
 
 Login_6
 
@@ -100,17 +119,3 @@ Generator()
 Load_Out_8
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
