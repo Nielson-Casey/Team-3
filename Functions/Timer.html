@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>     timer      </title>
+
+<script type="text/javascript">
+
+
+
+var userChoice = parseInt(prompt("Type in time to countdown")); 
+var timer = setInterval(countDown, 1000); 
+
+function countDown() { 
+   console.log(userChoice); 
+   userChoice--;
+document.getElementById('monster').innerHTML = userChoice;
+  if (userChoice < 1) { 
+      clearInterval(timer); 
+      console.log("END"); 
+   }
+}
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+
+
+<div type="text" id="monster"></div>
+
+</body>
+</html>
+
