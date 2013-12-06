@@ -21,10 +21,10 @@ function MoneyHandler() {
 	var money = 0.00;
 	//newMoney variable needs to come from what a user inputs so it will be declared elsewhere in the html. - Cam
 	function gainedMoney(newMoney) {
-		money += Math.ceil(newMoney * 100)/100;
+		money += Math.round(newMoney * 100)/100;
 	}
 	function lostMoney(newMoney) {
-		money -= Math.ceil(newMoney * 100)/100;
+		money -= Math.round(newMoney * 100)/100;
 	}
 	function getMoney() {
 		return money;
