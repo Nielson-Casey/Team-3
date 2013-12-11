@@ -9,6 +9,15 @@
 
   <link rel="stylesheet" href="/generated-score/assets/css/style.css">
   <script src="/generated-score/assets/js/modernizr.min.js"></script>
+  <script type="text/javascript">
+
+function Dice()
+  {
+  var d1 = Math.floor( 1+ Math.random() * 6 );  
+  document.getElementById('Roll1').innerHTML =   d1;
+  }
+
+</script>
 </head>
 <body>
   <nav id="menu" class="menu-nav" role="navigation">
@@ -47,6 +56,7 @@
   <div class="dice">22</div>
   <div class="dice">300</div>
   <div class="dice">B-2</div>
+  <button type="button" onclick="Dice()"> <div id="Roll1">Dice</div></button>
 </div>
 
 
