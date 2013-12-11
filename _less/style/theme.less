@@ -1,0 +1,240 @@
+// HEADER
+.app-header {
+  background-color: @brand-primary;
+  border-top: 3px solid @brand-dark;
+  border-bottom: 3px solid @brand-dark;
+  .clearfix();
+  padding: .6em 0;
+  min-height: 4.5em;
+}
+.app-title {
+  color: #fff;
+  float: left;
+  font-weight: @thin-weight;
+  font-size: 28px;
+  text-transform: lowercase;
+  line-height: 1em;
+  margin: 0;
+  position: relative;
+  top: -8px;
+  left: -.2em;
+  height: 45px;
+  .icon-score-logo {
+    font-size: 1.5em;
+    position: relative;
+    bottom: -.23em;
+    line-height: 1em;
+  }
+}
+
+// MENU NAV
+.page-wrap {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+.menu-toggle {
+  float: right;
+  height: 45px;
+  a {
+    background: transparent;
+    border: none;
+    color: @brand-light;
+    display: block;
+    font-size: 3em;
+    line-height: .9em;
+    overflow: hidden;
+    position: relative;
+    &:hover, &:active, &:target {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+.menu-nav {
+  transition: width 0.3s ease;
+  background-color: @brand-dark;
+  -webkit-box-shadow: 0 0 10px #000;
+  font-size: 1.25em;
+  font-weight: @thin-weight;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid darken(@brand-dark, 10%);
+    padding: .5em;
+    &:hover, &:active, &:target {
+      text-decoration: none;
+      background-color: darken(@brand-dark, 10%);
+    }
+  }
+
+  // Collapsed
+  width: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1000;
+}
+.menu-toggle .close-menu {
+  display: none;
+}
+#menu:target {
+  width: 80%;
+  
+}
+#menu:target + .page-wrap {
+  .menu-toggle .open-menu {
+    display: none;
+  }
+  .menu-toggle .close-menu {
+    display: block;
+  }
+}
+.close-menu {
+  a {
+    font-size: .8em;
+    text-transform: lowercase;
+    padding: .2em .8em;
+  }
+}
+
+// PAGES NAV
+.pages {
+  .clearfix();
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    border-left: 1px solid #ccc;
+    width: 33.333%;
+    float: left;
+    text-align: center;
+    list-style: none;
+    &:first-child {
+      border: none;
+    }
+    &.active {
+      a { border-bottom: 8px solid @brand-primary; }
+    }
+    a {
+      border-top: 8px solid #eee;
+      border-bottom: 8px solid #eee;
+      display: block;
+      background-color: #eee;
+      padding: 10px 0;
+      text-transform: uppercase;
+      font-weight: @bold-weight;
+      &:hover, &:active, &:target {
+        border-color: #fff;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+// MAIN
+.page-title {
+  color: #aaa;
+  border-bottom: 3px solid #999;
+  font-size: 1.2em;
+}
+
+// PLAYERS PAGE
+.add-player {
+  font-size: 1.4em;
+  display: block;
+  padding-bottom: .7em;
+  .clearfix();
+}
+.add-player-label {
+  float: left;
+}
+.add-player-icon {
+  float: right;
+  font-size: 2.4em;
+  font-weight: @thin-weight;
+  line-height: .5em;
+  margin-right: .2em;
+}
+.players {
+  margin: 0;
+  padding: 0;
+}
+.player {
+  list-style: none;
+  border-top: 2px solid #ddd;
+  .clearfix();
+}
+.player-name {
+  float: left;
+  width: 75%;
+  font-size: 1.3em;
+  color: #222;
+  padding-top: .4em;
+}
+.player-score {
+  float: left;
+  width: 75%;
+}
+.player-avatar {
+  float: right;
+  width: 25%;
+  max-width: 100px;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+// SPLASH PAGE
+
+.splash-wrap {
+  padding: 2em;
+}
+.splash-title {
+  text-align: center;
+  font-weight: 100;
+  color: #222;
+  margin: 0;
+  font-size: 5em;
+}
+.splash-logo {
+  font-size: 100px;
+  color: @brand-primary;
+  text-align: center;
+  position: relative;
+  top: -.3em;
+}
+
+
+// DICE PAGE
+.dice {
+  width: 120px;
+  height: 120px;
+  background-color: @brand-primary;
+  border-radius: 15px;
+  color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 60px;
+  float: left;
+  margin: 8px;
+}
+.dice-row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+
+
+
+
+

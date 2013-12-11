@@ -1,0 +1,21 @@
+// BUTTON STYLES
+.button {
+  background-color: @button-bg-default;
+  border: 2px solid darken(@button-bg-default, 10%);
+  padding: .5em;
+  text-align: center;
+  margin-bottom: 1em;
+  display: block;
+  text-decoration: none;
+  &:hover, &:active, &:target {
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
+.button-group {
+  .clearfix();
+}
+.button-primary {
+  background-color: @brand-primary;
+  border: 2px solid darken(@brand-primary, 10%);
+}
