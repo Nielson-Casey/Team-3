@@ -10,15 +10,7 @@ function addPlayerToDom(name) {
   var output = '';
   var list = document.getElementById('playerList');
 
-  output += '<li class="player">';
-  output += '<div class="player-avatar">';
-  output += '<img src="../assets/images/default_avatar.png" alt="player avatar">';
-  output += '</div>';
-  output += '<div class="player-name">';
-  output += name;
-  output += '</div>';
-  // output += '<div class="player-score">22-13</div>';
-  output += '</li>';
+  output += generatePlayerHTML(name);
   
   list.insertAdjacentHTML('beforebegin', output);
 
@@ -49,25 +41,31 @@ function addNewPlayer() {
 
   addPlayerToGlobal(newPlayer);
   addPlayerToDom(newPlayer.name);
+  savePlayersLocal();
 }
 
-function generatePlayersHTML() {
+function generatePlayerHTML(name) {
+  var output = '';
+  output += '<li class="player">';
+  output += '<div class="player-avatar">';
+  output += '<img src="../assets/images/default_avatar.png" alt="player avatar">';
+  output += '</div>';
+  output += '<div class="player-name">';
+  output += name;
+  output += '</div>';
+  // output += '<div class="player-score">22-13</div>';
+  output += '</li>';
+  return output;
+}
+
+function generatePlayersView() {
   var output = '';
   var list = document.getElementById('playerList');
   for(var key in players){
     var player = players[key];
     for (var prop in player) {
       if(player.hasOwnProperty(prop)){
-        // console.log(prop + " = " + player[prop]);
-        output += '<li class="player">';
-        output += '<div class="player-avatar">';
-        output += '<img src="../assets/images/default_avatar.png" alt="player avatar">';
-        output += '</div>';
-        output += '<div class="player-name">';
-        output += player[prop];
-        output += '</div>';
-        // output += '<div class="player-score">22-13</div>';
-        output += '</li>';
+        output += generatePlayerHTML(player[prop]);
       }
     }
   }
@@ -91,7 +89,7 @@ function loadPlayersLocal() {
     if (localStorage.getItem('players')) {
       window.players = localStorage.getItem('players');
       window.players = JSON.parse(window.players);
-      generatePlayersHTML();
+      generatePlayersView();
     }
   }
 }
