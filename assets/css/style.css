@@ -655,6 +655,7 @@ hr {
 .dice button {
   background: none;
   border: none;
+  color: #fff;
 }
 .d6 {
   width: 120px;
