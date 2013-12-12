@@ -37,13 +37,15 @@ function addNewPlayer() {
 // Adds New Player Object to the Global Object
 // Called by addNewPlayer()
 function addPlayerToGlobal(newPlayer) {
+  // count objects in global "players"
   var i = 0;
   for(var key in players){
     i += 1;
   }
+  // create an id for the new player
   var id = 'player' + i;
-  console.log(newPlayer);
-  console.log(id);
+  // add new player to global object
+  // with new id
   window.players[id] = newPlayer;
 }
 
@@ -53,17 +55,24 @@ function addPlayerToDom(name) {
   var output = '';
   var list = document.getElementById('playerList');
 
+  // generate HTML to output
   output += generatePlayerHTML(name);
   
+  // insert new HTML just inside the player list
   list.insertAdjacentHTML('beforebegin', output);
 
+  // clear the input field for next use
   document.getElementById('new_player_name').value = '';
 }
 
 // Retrieves Player Name from the DOM
 // Called by addNewPlayer()
 function getValidName() {
+  // get player name from the input field
   var playerName = document.getElementById('new_player_name').value;
+
+  // check against RegExp to make sure valid name
+  // NOT CURRENTLY ENFORCED
   var validName = /[a-zA-Z'-]/;
   var matchesName = playerName.match(validName);
   if (matchesName === null) {
@@ -79,6 +88,9 @@ function getValidName() {
 function generatePlayersView() {
   var output = '';
   var list = document.getElementById('playerList');
+
+  // Loop through all the players
+  // and generate HTML items for them
   for(var key in players){
     var player = players[key];
     for (var prop in player) {
@@ -87,6 +99,8 @@ function generatePlayersView() {
       }
     }
   }
+
+  // insert new HTML to the DOM
   list.insertAdjacentHTML('beforebegin', output);
 }
 
@@ -129,6 +143,8 @@ function loadPlayersLocal() {
 // Saves Players to Local Storage
 // called by addNewPlayers()
 function savePlayersLocal() {
+  // Serialize object to a string for storage using JSON.stringify()
+  // and save to local storage
   localStorage.setItem('players', JSON.stringify(players));
 }
 
