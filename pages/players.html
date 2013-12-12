@@ -22,56 +22,65 @@
 </nav>
   <div class="page-wrap">
     <header class="app-header" role="banner">
-  <div class="container">
-    <h1 class="app-title"><span class="icon-score-logo"></span>Score</h1>
-    <div class="menu-toggle">
-      <a href="#menu" class="open-menu">☰</a>
-      <a href="#" class="close-menu">☰</a>
-    </div>
-  </div>
-</header>
+      <div class="container">
+        <h1 class="app-title"><span class="icon-score-logo"></span>Score</h1>
+        <div class="menu-toggle">
+          <a href="#menu" class="open-menu">☰</a>
+          <a href="#" class="close-menu">☰</a>
+        </div>
+      </div>
+    </header>
 
     <nav class="pages" role="navigation">
-  <ul>
-    <li><a href="#">Players</a></li>
-    <li><a href="#">Timing</a></li>
-    <li class="active"><a href="#">Dice</a></li>
-  </ul>
-</nav>
+      <ul>
+        <li><a href="#">Players</a></li>
+        <li><a href="#">Timing</a></li>
+        <li class="active"><a href="#">Dice</a></li>
+      </ul>
+    </nav>
+
     <main class="page" role="main">
+
       <section>
         <div class="container">
           <h2 class="page-title">Players</h2>
-<a id="addPlayer" href="#" class="add-player">
-  <div class="add-player-label">New Player</div>
-  <div class="add-player-icon">+</div>
-</a>
-<ul class="players">
-  <li class="player">
-    <div class="player-avatar">
-      <img src="http://lorempixel.com/output/people-q-c-100-100-2.jpg" alt="player avatar">
-    </div>
-    <div class="player-name">Elise</div>
-    <div class="player-score">22-13</div>
-  </li>
-  <li class="player">
-    <div class="player-avatar">
-      <img src="http://lorempixel.com/output/people-q-c-100-100-3.jpg" alt="player avatar">
-    </div>
-    <div class="player-name">Dave</div>
-    <div class="player-score">20-15</div>
-  </li>
-  <li class="player">
-    <div class="player-avatar">
-      <img src="http://lorempixel.com/output/people-q-c-100-100-5.jpg" alt="player avatar">
-    </div>
-    <div class="player-name">Bryan</div>
-    <div class="player-score">20-15</div>
-  </li>
-</ul>
+          <a id="addPlayer" href="#" class="add-player">
+            <div class="add-player-label">New Player</div>
+            <div class="add-player-icon">+</div>
+          </a>
+          <input id="new_player_name" type="text">
+          <input id="add_player" type="submit" value="Add Player">
+          <ul id="playerList" class="players">
+            <li class="player">
+              <div class="player-avatar">
+                <img src="http://lorempixel.com/output/people-q-c-100-100-2.jpg" alt="player avatar">
+              </div>
+              <div class="player-name">Elise</div>
+              <div class="player-score">22-13</div>
+            </li>
+            <li class="player">
+              <div class="player-avatar">
+                <img src="http://lorempixel.com/output/people-q-c-100-100-3.jpg" alt="player avatar">
+              </div>
+              <div class="player-name">Dave</div>
+              <div class="player-score">20-15</div>
+            </li>
+            <li class="player">
+              <div class="player-avatar">
+                <img src="http://lorempixel.com/output/people-q-c-100-100-5.jpg" alt="player avatar">
+              </div>
+              <div class="player-name">Bryan</div>
+              <div class="player-score">20-15</div>
+            </li>
+          </ul>
         </div>
       </section>
+
     </main>
+
   </div> 
+
+  <script src="../assets/js/add-player-ck.js"></script>
+
 </body>
 </html>
