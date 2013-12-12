@@ -556,6 +556,43 @@ hr {
   border-bottom: 3px solid #999;
   font-size: 1.2em;
 }
+.dice {
+  width: 120px;
+  height: 120px;
+  background-color: #ef474a;
+  border-radius: 15px;
+  color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 60px;
+  float: left;
+  margin: 8px;
+}
+.dice button {
+  background: none;
+  border: none;
+  color: #fff;
+}
+.d6 {
+  width: 120px;
+  height: 120px;
+  color: #ef474a;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 120px;
+  line-height: 120px;
+  float: left;
+  margin: 8px;
+}
+.d6 button {
+  background: none;
+  border: none;
+  color: #ef474a;
+}
+.dice-row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
 .add-player {
   font-size: 1.4em;
   display: block;
@@ -639,46 +676,4 @@ hr {
   text-align: center;
   position: relative;
   top: -0.3em;
-}
-.dice {
-  width: 120px;
-  height: 120px;
-  background-color: #ef474a;
-  border-radius: 15px;
-  color: #fff;
-  padding: 15px 10px;
-  text-align: center;
-  font-size: 60px;
-  float: left;
-  margin: 8px;
-}
-.dice button {
-  background: none;
-  border: none;
-  color: #fff;
-}
-.d6 {
-  width: 120px;
-  height: 120px;
-  color: #ef474a;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 120px;
-  line-height: 120px;
-  float: left;
-  margin: 8px;
-}
-.d6 button {
-  background: none;
-  border: none;
-  color: #ef474a;
-}
-.dice-row {
-  margin-left: -8px;
-  margin-right: -8px;
-}
-.tap_to_roll button {
-  background: none;
-  border: none;
-  color: #ef474a;
 }
