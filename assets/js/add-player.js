@@ -17,6 +17,8 @@ function addPlayerToDom(name) {
   output += '</li>';
   
   list.insertAdjacentHTML('beforebegin', output);
+
+  document.getElementById('new_player_name').value = '';
 }
 
 function addNewPlayer() {
