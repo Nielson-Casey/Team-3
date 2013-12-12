@@ -7,17 +7,24 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
   <link rel="stylesheet" href="/generated-score/assets/css/style.css">
   <script src="/generated-score/assets/js/modernizr.min.js"></script>
   <script type="text/javascript">
 
 function Dice()
   {
-  var d1 = Math.floor( 1+ Math.random() * 6 );  
+  var d1 = Math.floor( 1+ Math.random() * 6 ); 
+  var d2 = Math.floor( 1+ Math.random() * 6 ); 
   document.getElementById('Roll1').innerHTML =   d1;
+  document.getElementById('Roll2').innerHTML =   d2;
   }
 
 </script>
+=======
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/modernizr.min.js"></script>
+>>>>>>> 6e766be7ffd2ee30bfe1f3ff9d58c8eca724a24e
 </head>
 <body>
   <nav id="menu" class="menu-nav" role="navigation">
@@ -52,14 +59,9 @@ function Dice()
         <div class="container">
           <h2 class="page-title">Dice</h2>
 <div class="dice-row">
-  <div class="dice">1</div>
-  <div class="dice">22</div>
-  <div class="dice">300</div>
-  <div class="dice">B-2</div>
-  <button type="button" onclick="Dice()"> <div id="Roll1">Dice</div></button>
+  <div class="dice"><button type="button" onclick="Dice()"> <div id="Roll1">1</div></button></div>
+  <div class="dice"><button type="button" onclick="Dice()"> <div id="Roll2">1</div></button></div>
 </div>
-
-
 
         </div>
       </section>
