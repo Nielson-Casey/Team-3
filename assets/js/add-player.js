@@ -52,8 +52,26 @@ function addNewPlayer() {
 }
 
 function generatePlayersHTML() {
-  output = '';
-  
+  var output = '';
+  var list = document.getElementById('playerList');
+  for(var key in players){
+    var player = players[key];
+    for (var prop in player) {
+      if(player.hasOwnProperty(prop)){
+        // console.log(prop + " = " + player[prop]);
+        output += '<li class="player">';
+        output += '<div class="player-avatar">';
+        output += '<img src="../assets/images/default_avatar.png" alt="player avatar">';
+        output += '</div>';
+        output += '<div class="player-name">';
+        output += player[prop];
+        output += '</div>';
+        // output += '<div class="player-score">22-13</div>';
+        output += '</li>';
+      }
+    }
+  }
+  list.insertAdjacentHTML('beforebegin', output);
 }
 
 function getValidName() {
