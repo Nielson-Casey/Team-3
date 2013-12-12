@@ -1,9 +1,9 @@
 window.players = {
-  player1: { name: "Sam" }
+
 };
 
 function capitaliseFirstLetter(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function addPlayerToDom(name) {
@@ -25,8 +25,15 @@ function addPlayerToDom(name) {
   document.getElementById('new_player_name').value = '';
 }
 
-function addPlayerToGlobal(name) {
-
+function addPlayerToGlobal(newPlayer) {
+  var i = 0;
+  for(var key in players){
+    i += 1;
+  }
+  var id = 'player' + i;
+  console.log(newPlayer);
+  console.log(id);
+  window.players[id] = newPlayer;
 }
 
 function addNewPlayer() {
@@ -40,7 +47,13 @@ function addNewPlayer() {
     newPlayer.name = playerName;
   }
 
+  addPlayerToGlobal(newPlayer);
   addPlayerToDom(newPlayer.name);
+}
+
+function generatePlayersHTML() {
+  output = '';
+  
 }
 
 function getValidName() {
@@ -54,6 +67,22 @@ function getValidName() {
     return playerName;
   }
 }
+
+function loadPlayersLocal() {
+  if (window.localStorage) {
+    if (localStorage.getItem('players')) {
+      window.players = localStorage.getItem('players');
+      window.players = JSON.parse(window.players);
+      generatePlayersHTML();
+    }
+  }
+}
+
+function savePlayersLocal() {
+  localStorage.setItem('players', JSON.stringify(players));
+}
+
+loadPlayersLocal();
 
 document.getElementById('add_player').addEventListener('click', function(){
   addNewPlayer();
