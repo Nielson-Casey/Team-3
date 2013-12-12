@@ -1,3 +1,7 @@
+window.players = {
+  player1: { name: "Sam" }
+};
+
 function capitaliseFirstLetter(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -21,18 +25,33 @@ function addPlayerToDom(name) {
   document.getElementById('new_player_name').value = '';
 }
 
+function addPlayerToGlobal(name) {
+
+}
+
 function addNewPlayer() {
+  // New Player Object
+  var newPlayer = {};
+
+  // Get and Capitalize Player Name
+  var playerName = getValidName();
+
+  if (playerName !== false) {
+    newPlayer.name = playerName;
+  }
+
+  addPlayerToDom(newPlayer.name);
+}
+
+function getValidName() {
   var playerName = document.getElementById('new_player_name').value;
   var validName = /[a-zA-Z'-]/;
   var matchesName = playerName.match(validName);
-
-  // Capitalise
-  playerName = capitaliseFirstLetter(playerName);
-
   if (matchesName === null) {
-    // Not valid name
+    return false;
   } else {
-    addPlayerToDom(playerName);
+    playerName = capitaliseFirstLetter(playerName); // Capitalise
+    return playerName;
   }
 }
 
