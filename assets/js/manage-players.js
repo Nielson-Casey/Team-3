@@ -12,7 +12,7 @@ window.players = {
 
 // -----------------------------------------------
 // ADD NEW PLAYER
-// This is where it all begins
+// This is where it all happens
 
 function addNewPlayer() {
   // New Player Object
@@ -25,10 +25,11 @@ function addNewPlayer() {
   newPlayer.name = playerName;
 
   // Save to Global Object
-  addPlayerToGlobal(newPlayer);
+  // and store player's id
+  newPlayer.id = addPlayerToGlobal(newPlayer);
 
   // Generate HTML
-  addPlayerToDom(newPlayer.name);
+  addPlayerToDom(newPlayer.id, newPlayer.name);
 
   // Save to Local Storage
   savePlayersLocal();
@@ -47,19 +48,23 @@ function addPlayerToGlobal(newPlayer) {
   // add new player to global object
   // with new id
   window.players[id] = newPlayer;
+  return id;
 }
 
 // Adds New Player Object to the DOM
 // Called by addNewPlayer()
-function addPlayerToDom(name) {
+function addPlayerToDom(id, name) {
   var output = '';
   var list = document.getElementById('playerList');
 
   // generate HTML to output
-  output += generatePlayerHTML(name);
+  output += generatePlayerHTML(id, name);
   
   // insert new HTML just inside the player list
   list.insertAdjacentHTML('beforebegin', output);
+
+  // attatch delete player event listener
+  addDeleteEvent(id);
 
   // clear the input field for next use
   document.getElementById('new_player_name').value = '';
@@ -73,14 +78,16 @@ function getValidName() {
 
   // check against RegExp to make sure valid name
   // NOT CURRENTLY ENFORCED
-  var validName = /[a-zA-Z'-]/;
-  var matchesName = playerName.match(validName);
-  if (matchesName === null) {
-    return false;
-  } else {
-    playerName = capitaliseFirstLetter(playerName); // Capitalise
-    return playerName;
-  }
+  // var validName = /[a-zA-Z'-]/;
+  // var matchesName = playerName.match(validName);
+  // if (matchesName === null) {
+  //   return false;
+  // } else {
+  //   playerName = capitaliseFirstLetter(playerName); // Capitalise
+  //   return playerName;
+  // }
+  playerName = capitaliseFirstLetter(playerName); // Capitalise
+  return playerName;
 }
 
 // Generate View for Players
@@ -93,11 +100,8 @@ function generatePlayersView() {
   // and generate HTML items for them
   for(var key in players){
     var player = players[key];
-    for (var prop in player) {
-      if(player.hasOwnProperty(prop)){
-        output += generatePlayerHTML(player[prop]);
-      }
-    }
+    console.log(players[key]);
+    output += generatePlayerHTML(key, player['name']);
   }
 
   // insert new HTML to the DOM
@@ -106,9 +110,11 @@ function generatePlayersView() {
 
 // Generates Player HTML
 // called by addPlayerToDom() and generatePlayersView()
-function generatePlayerHTML(name) {
+function generatePlayerHTML(id, name) {
   var output = '';
-  output += '<li class="player">';
+  output += '<li id="';
+  output += id;
+  output += '" class="player">';
   output += '<div class="player-avatar">';
   output += '<img src="../assets/images/default_avatar.png" alt="player avatar">';
   output += '</div>';
@@ -116,8 +122,38 @@ function generatePlayerHTML(name) {
   output += name;
   output += '</div>';
   // output += '<div class="player-score">22-13</div>';
+  output += '<a href="#" class="player-delete" data-id="';
+  output += id
+  output += '">';
+  output += 'Delete';
+  output += '</a>';
   output += '</li>';
   return output;
+}
+
+// -----------------------------------------------
+// DELETE PLAYER
+
+function deletePlayer(id) {
+  // Get player html element
+  var player = document.getElementById(id);
+
+  // delete player from Global Object
+  delete window.players[id];
+
+  // delete html element
+  player.remove();
+
+  // save results to local storage
+  savePlayersLocal();
+}
+
+function addDeleteEvent(id) {
+  var query = '#' + id + ' .player-delete';
+  var deleteNode = document.querySelector(query);
+  deleteNode.addEventListener('click', function(){
+    deletePlayer(id);
+  }, false);
 }
 
 
@@ -163,7 +199,7 @@ function capitaliseFirstLetter(string){
 // These are run when the document loads
 
 // Check for local storage and load
-loadPlayersLocal();
+// loadPlayersLocal();
 
 // Event Listener for Adding New Players
 document.getElementById('add_player').addEventListener('click', function(){
