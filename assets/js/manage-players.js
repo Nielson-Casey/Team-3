@@ -27,9 +27,9 @@ function addNewPlayer() {
   //initialize player socre at zero
   var score = 0;
 
-  function gainedPoint() { 
-    newPlayer.score++; 
-  } 
+  function gainedPoint() {
+    newPlayer.score++;
+  }
   
   function lostPoint() {
     newPlayer.score--;
@@ -67,12 +67,12 @@ function addPlayerToGlobal(newPlayer) {
 
 // Adds New Player Object to the DOM
 // Called by addNewPlayer()
-function addPlayerToDom(id, name) {
+function addPlayerToDom(id, name, score) {
   var output = '';
   var list = document.getElementById('playerList');
 
   // generate HTML to output
-  output += generatePlayerHTML(id, name);
+  output += generatePlayerHTML(id, name, score);
   
   // insert new HTML just inside the player list
   list.insertAdjacentHTML('beforebegin', output);
@@ -115,16 +115,24 @@ function generatePlayersView() {
   for(var key in players){
     var player = players[key];
     console.log(players[key]);
-    output += generatePlayerHTML(key, player['name']);
+    output += generatePlayerHTML(key, player['name'], player['score']);
   }
 
   // insert new HTML to the DOM
   list.insertAdjacentHTML('beforebegin', output);
+
+  // Loop through all the players
+  // and attatch Delete Event
+  for (key in players) {
+    player = players[key];
+    console.log(players[key]);
+    addDeleteEvent(key);
+  }
 }
 
 // Generates Player HTML
 // called by addPlayerToDom() and generatePlayersView()
-function generatePlayerHTML(id, name) {
+function generatePlayerHTML(id, name, score) {
   var output = '';
   output += '<li id="';
   output += id;
@@ -135,7 +143,7 @@ function generatePlayerHTML(id, name) {
   output += '<div class="player-name">';
   output += name;
   output += '</div>';
-  output += '<div class="player-score">'
+  output += '<div class="player-score">';
   output += score;
   output += '</div>';
   output += '<a href="#" class="player-delete" data-id="';
