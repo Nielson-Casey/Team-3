@@ -416,7 +416,7 @@ hr {
 .app-header:after {
   clear: both;
 }
-.app-title {
+.app-title, .app-title a, .app-title a:hover, app-title a:active {
   color: #fff;
   float: left;
   font-weight: 100;
@@ -428,6 +428,7 @@ hr {
   top: -8px;
   left: -0.2em;
   height: 45px;
+  text-decoration: none;
 }
 .app-title .icon-score-logo {
   font-size: 1.5em;
