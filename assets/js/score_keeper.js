@@ -1,18 +1,19 @@
 function ScoreKeeper() {
-	var score= 0; 
+	var playerScore = {}; 
+	var score= document.getElementById('playerScore');
 	function gainedPoint() { 
-		score++; 
+		playerScore.score++; 
 	} 
 	function lostPoint() {
-		score--;
+		playerScore.score--;
 	}
 	function gainedManyPoints(points) {
-		score += points
+		playerScore.score += points
 	}
 	function lostManyPoints(points) {
-		score -= points
+		playerScore.score -= points
 	}
 	function getScore() { 
-		return score; 
+		 document.getElementById("playerScore").innerHTML=score; 
 	} 
 }

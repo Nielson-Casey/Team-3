@@ -24,12 +24,26 @@ function addNewPlayer() {
   // Save it to the New Player Object
   newPlayer.name = playerName;
 
+  //initialize player socre at zero
+  var score = 0;
+
+  function gainedPoint() { 
+    newPlayer.score++; 
+  } 
+  
+  function lostPoint() {
+    newPlayer.score--;
+  }
+
+  //add score to player object
+  newPlayer.score = score;
+
   // Save to Global Object
   // and store player's id
   newPlayer.id = addPlayerToGlobal(newPlayer);
 
   // Generate HTML
-  addPlayerToDom(newPlayer.id, newPlayer.name);
+  addPlayerToDom(newPlayer.id, newPlayer.name, newPlayer.score);
 
   // Save to Local Storage
   savePlayersLocal();
@@ -121,7 +135,9 @@ function generatePlayerHTML(id, name) {
   output += '<div class="player-name">';
   output += name;
   output += '</div>';
-  // output += '<div class="player-score">22-13</div>';
+  output += '<div class="player-score">'
+  output += score;
+  output += '</div>';
   output += '<a href="#" class="player-delete" data-id="';
   output += id
   output += '">';
