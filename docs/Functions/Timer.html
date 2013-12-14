@@ -3,26 +3,27 @@
 <head>
 <meta charset="utf-8">
 <title>     timer      </title>
-
 <script type="text/javascript">
 
+var output = 30;
+var count = 30;
+var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
 
 
-var userChoice = parseInt(prompt("Type in time to countdown")); 
-var timer = setInterval(countDown, 1000); 
 
-function countDown() { 
-   console.log(userChoice); 
-   userChoice--;
-document.getElementById('monster').innerHTML = userChoice;
-  if (userChoice < 1) { 
-      clearInterval(timer); 
-      console.log("END"); 
-   }
+function timer()
+{
+  count = count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     window.alert('STOP');
+     return;
+  }
+  output--;
+  document.getElementById('monster').innerHTML = output;
+  //Do code for showing the number of seconds here
 }
-
-
-
 
 
 
@@ -31,9 +32,9 @@ document.getElementById('monster').innerHTML = userChoice;
 </head>
 <body>
 
-
-
 <div type="text" id="monster"></div>
+
+
 
 </body>
 </html>
