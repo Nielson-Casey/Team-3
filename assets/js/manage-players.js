@@ -139,13 +139,13 @@ function generatePlayerHTML(id, name, score) {
   output += '<div class="player-name">';
   output += name;
   output += '</div>';
-  output += '<div class "addPoint">';
+  output += '<div class "changePoint">';
   output += '<button type="button" onclick="addNewPlayer.gainedPoint()">+</button>'
   output += '</div>'
   output += '<div class="player-score">';
   output += score;
   output += '</div>';
-  output += '<div class "lostPoint">';
+  output += '<div class "changePoint">';
   output += '<button type="button" onclick="addNewPlayer.lostPoint()">-</button>'
   output += '</div>'
   output += '<a href="#" class="player-delete" data-id="';
