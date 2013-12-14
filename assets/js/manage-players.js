@@ -123,11 +123,7 @@ function generatePlayersView() {
 
   // Loop through all the players
   // and attatch Delete Event
-  for (key in players) {
-    player = players[key];
-    console.log(players[key]);
-    addDeleteEvent(key);
-  }
+  addDeleteEvents();
 }
 
 // Generates Player HTML
@@ -172,12 +168,23 @@ function deletePlayer(id) {
   savePlayersLocal();
 }
 
+// For use with single DOM output ('add player')
 function addDeleteEvent(id) {
   var query = '#' + id + ' .player-delete';
   var deleteNode = document.querySelector(query);
   deleteNode.addEventListener('click', function(){
     deletePlayer(id);
   }, false);
+}
+
+// For use with generating full list (localstorage items on load)
+// called by generatePlayersView()
+function addDeleteEvents() {
+  for (var key in players) {
+    var player = players[key];
+    console.log(players[key]);
+    addDeleteEvent(key);
+  }
 }
 
 
