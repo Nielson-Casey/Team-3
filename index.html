@@ -7,8 +7,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/modernizr.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/modernizr.min.js"></script>
 </head>
 <body>
   <div class="page-wrap">
@@ -16,17 +16,16 @@
     <main class="page" role="main">
       <section>
         <div class="container">
-          <h2 class="page-title">Page Types:</h2>
-          <h3>Default Pages:</h3>
-          <ul>
-            <li><a href="pages/splash.html">Splash Page</a></li>
-          </ul>
-          <h3>Game Pages:</h3>
-          <ul>
-            <li><a href="pages/players.html">Players List</a></li>
-            <li><a href="pages/scores.html">Player Scores</a></li>
-            <li><a href="pages/dice.html">Dice Roll</a></li>
-          </ul>
+          <div class="splash-wrap">
+          <h1 class="splash-title">score</h1>
+          <div class="splash-logo"><span class="icon-score-logo"></span></div>
+            <div class="button-group">
+              <a href="#" class="button col-45 pull-left">Login</a>
+              <a href="#" class="button col-45 pull-right">Sign Up</a>
+            </div>
+            <a href="/pages/players.html" class="button button-primary">New Game</a>
+            <a href="/pages/players.html" class="button">Resume Game</a>
+          </div>
         </div>
       </section>
     </main>
