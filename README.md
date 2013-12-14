@@ -18,7 +18,7 @@ A fork and a pull, just to get us started. =P
 
 3. JavaScript objects   >>>   function getValidName()    {Most of our functions are objects}
 
-4. DOM manipulation  
+4. DOM manipulation  >>> function addPlayersToDom() uses getElementByID() and insertAdjacentHTML() to manipulate the DOM
 
 5. CSS3 transitions   >>>
 								.menu-nav {
@@ -34,8 +34,8 @@ A fork and a pull, just to get us started. =P
 								-webkit-animation-iteration-count: infinite;
 								}
 
-7. Using local data storage   >>>     localStorage.setItem
+7. Using local data storage   >>>     localStorage.setItem and localStorage.getItem to set and retrieve the JSON string from localStorage
 
 8. AJAX interactions with remote servers
 
-9. JSON data serialization     >>>    JSON.stringify
+9. JSON data serialization     >>>    JSON.stringify() and JSON.parse() to turn javascript objects into a string and save them to localStorage
