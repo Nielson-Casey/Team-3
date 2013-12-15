@@ -24,18 +24,10 @@ function addNewPlayer() {
   // Save it to the New Player Object
   newPlayer.name = playerName;
 
-  //initialize player score at zero
+  // initialize player score at zero
   var score = 0;
 
-  function gainedPoint() {
-    newPlayer.score += 1;
-  }
-  
-  function lostPoint() {
-    newPlayer.score -= 1;
-  }
-
-  //add score to player object
+  // add score to player object
   newPlayer.score = score;
 
   // Save to Global Object

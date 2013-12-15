@@ -65,9 +65,7 @@ function addFriend(id) {
 function addFriendEvent(id) {
   var query = '#' + id + '.friend-add';
   var addNode = document.querySelector(query);
-  console.log(addNode);
   addNode.addEventListener('click', function(){
-    console.log('Added listener for' + id);
     addFriend(id);
   }, false);
 }
@@ -78,7 +76,6 @@ function addFriendEvent(id) {
 function addFriendEvents() {
   for (var key in friends) {
     var friend = friends[key];
-    console.log(friend);
     addFriendEvent(key);
   }
 }
