@@ -3,16 +3,7 @@ Team-3
 
 A fork and a pull, just to get us started. =P
 
-1. JavaScript Workers   >>>
-							var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-							function timer(){
-								count = count-1;
-									if (count <= 0) {
-									clearInterval(counter);
-									window.alert('STOP');
-									return;}
-									output--;
-									document.getElementById('monster').innerHTML = output;}
+1. Web Workers   >>>  Walk through demo at http://html5demos.com/worker
 
 2. Creative, pleasant, mobile user interface creation  >>> We Explain why 
 
