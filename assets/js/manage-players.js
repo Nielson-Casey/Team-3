@@ -24,7 +24,7 @@ function addNewPlayer() {
   // Save it to the New Player Object
   newPlayer.name = playerName;
 
-  //initialize player socre at zero
+  //initialize player score at zero
   var score = 0;
 
   function gainedPoint() {
@@ -139,15 +139,11 @@ function generatePlayerHTML(id, name, score) {
   output += '<div class="player-name">';
   output += name;
   output += '</div>';
-  output += '<div class "changePoint">';
-  output += '<button type="button" onclick="addNewPlayer.gainedPoint()">+</button>'
-  output += '</div>'
+  output += '<div class "changePoint"><button type="button" onclick="newPlayer.score.gainedPoint()">+</button></div>'
   output += '<div class="player-score">';
   output += score;
   output += '</div>';
-  output += '<div class "changePoint">';
-  output += '<button type="button" onclick="addNewPlayer.lostPoint()">-</button>'
-  output += '</div>'
+  output += '<div class "changePoint"><button type="button" onclick="newPlayer.score.lostPoint()">-</button></div>'
   output += '<a href="#" class="player-delete" data-id="';
   output += id;
   output += '">';
