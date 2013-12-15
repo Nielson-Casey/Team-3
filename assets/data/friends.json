@@ -1,0 +1,16 @@
+friendsCallback({ 
+  "friends" : {
+    "friend0": {
+      "name": "Casey"
+    },
+    "friend1": {
+      "name": "Cameron"
+    },
+    "friend2": {
+      "name": "Sam"
+    },
+    "friend3": {
+      "name": "Clint"
+    }
+  } 
+});

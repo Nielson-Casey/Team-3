@@ -114,7 +114,7 @@ function generatePlayersView() {
   // and generate HTML items for them
   for(var key in players){
     var player = players[key];
-    console.log(players[key]);
+    // console.log(players[key]);
     output += generatePlayerHTML(key, player['name'], player['score']);
   }
 
@@ -184,7 +184,7 @@ function addDeleteEvent(id) {
 function addDeleteEvents() {
   for (var key in players) {
     var player = players[key];
-    console.log(players[key]);
+    // console.log(players[key]);
     addDeleteEvent(key);
   }
 }
