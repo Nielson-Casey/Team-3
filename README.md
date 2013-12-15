@@ -36,6 +36,6 @@ A fork and a pull, just to get us started. =P
 
 7. Using local data storage   >>>     localStorage.setItem and localStorage.getItem to set and retrieve the JSON string from localStorage
 
-8. AJAX interactions with remote servers
+8. AJAX interactions with remote servers   >>> get-friends.js fetches a json file (using jsonp format) with 'friends' data from an external server, that data is then added to the page so users can add friends as players in the game.
 
 9. JSON data serialization     >>>    JSON.stringify() and JSON.parse() to turn javascript objects into a string and save them to localStorage
